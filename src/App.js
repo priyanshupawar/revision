@@ -1,5 +1,7 @@
 import "./App.css";
-import ClassAssignment2 from "./Components/ClassAssignment2";
+import ClassAssignment3 from "./Components/ClassAssignment3";
+// import Mcqassign from "./Components/Mcqassign";
+// import ClassAssignment2 from "./Components/ClassAssignment2";
 // import AssignmentFives from "./Components/AssignmentFives";
 // import AssignmentSeven from "./Components/AssignmentSeven";
 // import ClassAssignment from "./Components/ClassAssignment";
@@ -12,7 +14,9 @@ function App() {
       {/* <AssignmentFives /> */}
       {/* <ClassAssignment /> */}
       {/* <AssignmentSeven /> */}
-      <ClassAssignment2 />
+      {/* <ClassAssignment2 /> */}
+      {/* <Mcqassign /> */}
+      <ClassAssignment3 />
     </>
   );
 }
