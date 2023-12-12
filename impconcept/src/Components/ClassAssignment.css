@@ -1,0 +1,48 @@
+/* Add some basic styling to the container */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Style the input and button container */
+  div {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  /* Style the main container */
+  .container {
+    text-align: center;
+  }
+  
+  /* Style the output count */
+  .count {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the error message */
+  .error {
+    color: red;
+  }
+  
+  /* Disable the Decrement button when count is 0 or negative */
+  button[disabled] {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }
+  
