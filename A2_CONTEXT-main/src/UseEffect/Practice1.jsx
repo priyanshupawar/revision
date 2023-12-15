@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function Practice1() {
-  const [color, setColor] = useState("red");
+  // const [color, setColor] = useState("red");
   useEffect(() => {
-    let c1 = Math.trunc(Math.random() * 250);
-    let c2 = Math.trunc(Math.random() * 250);
-    let c3 = Math.trunc(Math.random() * 250);
+    // let c1 = Math.trunc(Math.random() * 250);
+    // let c2 = Math.trunc(Math.random() * 250);
+    // let c3 = Math.trunc(Math.random() * 250);
     // let clr = (rgb)
     // console.log(color:{})
   }, []);
@@ -32,7 +32,7 @@ function Practice1() {
           return (
             <div
               style={{
-                color: color,
+                // color: color,
                 // border: "1px solid red",
                 height: "350px",
                 width: "350px",
