@@ -3,13 +3,15 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState([]);
- 
+  const [selectedYear, setSelectedYear] = useState("");
   const [formData, setFormData] = useState({
     duration: "yearly",
     price: 129,
     date: new Date().toISOString().split("T")[0],
   });
-
+  const handleYearChange = (e) => {
+    setSelectedYear(e.target.value);
+  };
   const calculatePrice = (selectedDuration) => {
     switch (selectedDuration) {
       case "yearly":
@@ -112,30 +114,35 @@ function App() {
           <h2 className="text-center fw-bold" style={{ color: "#4CAF50" }}>
             Collected Data
           </h2>
-          <select name="" id="" className="form-control w-25 m-5">
+          <select
+            name="yearFilter"
+            id="yearFilter"
+            className="form-control w-25 m-5"
+            onChange={handleYearChange}
+            value={selectedYear}
+          >
             <option value="">All</option>
-            <option value="">2023</option>
-            <option value="">2022</option>
-            <option value="">2021</option>
-            <option value="">2020</option>
-            <option value="">2019</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
           </select>
           <ul className="list-group">
-            {data.map((item, index) => (
-              <li
-                key={index}
-                className="list-group-item"
-                style={{
-                  backgroundColor: "#fff",
-                  color: "#333",
-                  borderColor: "#ddd",
-                }}
-              >
-                <strong>Duration:</strong> {item.duration},{" "}
-                <strong>Price:</strong> ₹{item.price}/-, <strong>Date:</strong>{" "}
-                {item.date}
-              </li>
-            ))}
+            {data
+              .filter(
+                (item) => !selectedYear || item.date.includes(selectedYear)
+              ) // Step 3
+              .map((item, index) => {
+                const itemYear = new Date(item.date).getFullYear();
+                return (
+                  <li key={index} className="list-group-item">
+                    <strong>Duration:</strong> {item.duration},{" "}
+                    <strong>Price:</strong> ₹{item.price}/-,{" "}
+                    <strong>Date:</strong> {item.date} ({itemYear})
+                  </li>
+                );
+              })}
           </ul>
         </div>
       )}
