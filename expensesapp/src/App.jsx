@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState([]);
   const [selectedYear, setSelectedYear] = useState("");
   const [formData, setFormData] = useState({
-    duration: "yearly",
+    duration: "Yearly",
     price: 129,
     date: new Date().toISOString().split("T")[0],
   });
@@ -14,11 +14,11 @@ function App() {
   };
   const calculatePrice = (selectedDuration) => {
     switch (selectedDuration) {
-      case "yearly":
+      case "Yearly":
         return 129;
-      case "monthly":
+      case "Monthly":
         return 79;
-      case "weekly":
+      case "Weekly":
         return 29;
       default:
         return 0;
@@ -28,7 +28,7 @@ function App() {
   const handleSubmit = () => {
     console.log("Form submitted!");
     console.log("FormData:", formData);
-    alert("Congratulations! Subscribed successfully!");
+    // alert("Congratulations! Subscribed successfully!");
     setData([...data, formData]);
   };
 
@@ -77,9 +77,9 @@ function App() {
           value={formData.duration}
           style={{ backgroundColor: "#fff", color: "#333" }}
         >
-          <option value="yearly">Yearly</option>
+          <option value="Yearly">Yearly</option>
           <option value="monthly">Monthly</option>
-          <option value="weekly">Weekly</option>
+          <option value="Weekly">Weekly</option>
         </select>
       </div>
       <div className="form-group d-flex gap-4">
@@ -132,15 +132,19 @@ function App() {
             {data
               .filter(
                 (item) => !selectedYear || item.date.includes(selectedYear)
-              ) // Step 3
+              )
               .map((item, index) => {
                 const itemYear = new Date(item.date).getFullYear();
                 return (
-                  <li key={index} className="list-group-item">
+                  <div
+                    key={index}
+                    className="list-group-item p-5 m-3 justify-content-evenly"
+                  >
                     <strong>Duration:</strong> {item.duration},{" "}
-                    <strong>Price:</strong> ₹{item.price}/-,{" "}
+                    <strong>Price:</strong> ₹{item.price}/-{" "}
+                    {" "}
                     <strong>Date:</strong> {item.date} ({itemYear})
-                  </li>
+                  </div>
                 );
               })}
           </ul>
