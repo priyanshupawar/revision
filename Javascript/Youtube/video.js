@@ -1,31 +1,29 @@
-function playVideo() {
-  let data = JSON.parse(localStorage.getItem("clicked_items"));
-  console.log(data);
-}
-
 //search function for navbar
-const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
-const searchVideos = async (e) => {
-  e.preventDefault();
-  try {
-    const query = document.getElementById("query").value;
-    // console.log(query);
-    let res = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${Api_Key}`
-    );
-    let data = await res.json();
-    const actualData = data.items;
-    console.log("data", actualData);
-    appendVideos(actualData);
-  } catch (err) {
-    console.log("error", err);
-  }
-};
+// const Api_Key = `AIzaSyAJKf97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+
+// const searchVideos = async (e) => {
+//   e.preventDefault();
+//   try {
+//     let query = document.getElementById("query").value;
+
+//     // console.log(query);
+//     let res = await fetch(
+//       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${Api_Key}`
+//     );
+//     query = "";
+//     let data = await res.json();
+//     const actualData = data.items;
+//     console.log("data", actualData);
+//     appendVideos(actualData);
+//   } catch (err) {
+//     console.log("error", err);
+//   }
+// };
 
 //Append the search thing on page
 
-const ContainerDiv = document.getElementById("ParentContainer");
-
+// const ContainerDiv = document.getElementById("ParentContainer");
+const ContainerDiv = document.getElementById("recommendedVideos");
 const appendVideos = (data) => {
   if (data.length === 0) {
     let heading = document.createElement("h1");
@@ -49,9 +47,9 @@ const appendVideos = (data) => {
 
       let img = document.createElement("img");
       img.src = image;
-      let heading = document.createElement("h5");
+      let heading = document.createElement("h6");
       heading.innerText = title;
-      let Cname = document.createElement("h6");
+      let Cname = document.createElement("p");
       Cname.innerText = ChannelName;
 
       container.append(videoThumb, heading, Cname);
@@ -59,3 +57,35 @@ const appendVideos = (data) => {
     });
   }
 };
+
+async function recommendedVideo() {
+  const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7gr";
+  // e.preventDefault();
+  try {
+    let res = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=trending&key=${Api_Key}`
+    );
+    query = "";
+    let data = await res.json();
+    const actualData = data.items;
+    console.log("data", actualData);
+    appendVideos(actualData);
+  } catch (err) {
+    console.log("error", err);
+  }
+}
+
+function playVideo() {
+  // e.preventDefault();
+  let data = JSON.parse(localStorage.getItem("clicked_items"));
+  // console.log(data.videoId);
+  let id = data.videoId;
+  let container = document.getElementById("videoDetails");
+  let iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1`;
+  iframe.width = "960";
+  iframe.height = "555";
+  iframe.setAttribute("allowfullscreen", true);
+  container.append(iframe);
+  recommendedVideo();
+}

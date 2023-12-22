@@ -1,14 +1,13 @@
-const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+// const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7gr";
 
 const HomeData = async () => {
   try {
-    // console.log(query);
     let res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=javascriptQuestions&key=${Api_Key}`
     );
     let data = await res.json();
     const actualData = data.items;
-    // console.log("data", actualData);
     const ContainerDiv = document.getElementById("ParentContainer");
     ContainerDiv.innerHTML = null;
     appendVideos(actualData);
@@ -20,13 +19,11 @@ const HomeData = async () => {
 HomeData();
 const trendingData = async () => {
   try {
-    // console.log(query);
     let res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=trending&key=${Api_Key}`
     );
     let data = await res.json();
     const actualData = data.items;
-    // console.log("data", actualData);
     const ContainerDiv = document.getElementById("ParentContainer");
     ContainerDiv.innerHTML = null;
     appendVideos(actualData);
@@ -41,13 +38,11 @@ const searchVideos = async (e) => {
   e.preventDefault();
   try {
     const query = document.getElementById("query").value;
-    // console.log(query);
     let res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${Api_Key}`
     );
     let data = await res.json();
     const actualData = data.items;
-    // console.log("data", actualData);
     const ContainerDiv = document.getElementById("ParentContainer");
     ContainerDiv.innerHTML = null;
     appendVideos(actualData);
@@ -61,9 +56,10 @@ const searchVideos = async (e) => {
 const ContainerDiv = document.getElementById("ParentContainer");
 
 const appendVideos = (data) => {
-  data.forEach(({ snippet, id }) => {
+  data.forEach(({ snippet, id: { videoId } }) => {
+    // console.log(videoId);
     const title = snippet.title;
-    const videoId = snippet.videoId;
+    // const videoId = snippet.videoId;
     const thumbnail = snippet.thumbnails.high.url;
     const image = snippet.thumbnails.default.url;
     const ChannelName = snippet.channelTitle;
