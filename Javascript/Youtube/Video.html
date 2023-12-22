@@ -1,63 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body onload="playVideo()">
     <!-- navbar Start from here  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              src="./images/A-logo.png"
-              alt="YouTube Logo"
-              width="30"
-              height="30"
-              class="d-inline-block align-top"
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img
+            src="./images/A-logo.png"
+            alt="YouTube Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+          />
+          YouTube
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Trending</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Subscriptions</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-auto">
+            <input
+              id="query"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
             />
-            YouTube
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Trending</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Subscriptions</a>
-              </li>
-            </ul>
-            <form class="d-flex ms-auto">
-              <input
-                id="query"
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-light" onclick="searchVideos(event)">
-                Search
-              </button>
-            </form>
-          </div>
+            <button class="btn btn-outline-light" onclick="searchVideos(event)">
+              Search
+            </button>
+          </form>
         </div>
-      </nav>
-      <!-- navbar Start from here  -->
-</body>
+      </div>
+    </nav>
+    <!-- navbar Start from here  -->
+
+    <div id="main-container">
+      <!-- video details section start -->
+
+      <div id="videoDetails" class="video-card">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/iO6gOi3Szx4?si=7mUx4qSG4zj-GZuu"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- video details section end -->
+      <!-- Reacommended video  section start -->
+
+      <div id="recommendedVideos"></div>
+      <!-- video details section end -->
+    </div>
+
+    <!-- Include Bootstrap JS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Bootstrap JS from CDN -->
+  </body>
+  <script src="./video.js"></script>
 </html>
