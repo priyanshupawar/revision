@@ -1,21 +1,14 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
-import Counter from "./Components/Counter";
+// import Counter from "./Components/Counter";
+import MainRoutes from "./Pages/MainRoutes";
 
 function App() {
-  const [show, setShow] = useState(false);
+
   return (
-    <div className="App">
-      {show && <Counter />}
-      <button
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        Show Counter
-      </button>
-    </div>
-  );
+
+  <MainRoutes/>
+   );
 }
 
 export default App;
