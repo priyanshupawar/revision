@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse number</title>
+  </head>
+  <body>
+    <h1>Reverse number</h1>
+
+    <h1>Task</h1>
+    <h3>Fabonacci series</h3>
+    <h3>Find factors of the given number</h3>
+    <h3>Find factorial of the given number</h3>
+  </body>
+</html>
+<script>
+  let num = Number(prompt("Enter number to check palendrome"));
+
+  num = num.toString().split("");
+  let bag = "";
+  for (let i = num.length - 1; i >= 0; i--) {
+    bag += num[i];
+  }
+  bag = +bag;
+  console.log(typeof bag);
+</script>

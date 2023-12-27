@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong number</title>
+  </head>
+  <body>
+    <h1>Day-2</h1>
+    <h2>Armstrong number</h2>
+  </body>
+</html>
+<script>
+  let num = Number(prompt("Enter any number more than one digit"));
+  //   let num = 153;
+  let n = num;
+  let length = 0;
+  while (num > 0) {
+    length++;
+    num = Math.trunc(num / 10);
+  }
+  let sum = 0;
+  num = n;
+  while (num > 0) {
+    let rem = num % 10;
+    let fact = 1;
+    for (let i = 0; i < length; i++) {
+      fact = fact * rem;
+    }
+    sum = sum + fact;
+    num = Math.trunc(num / 10);
+  }
+  if (sum === n) {
+    console.log("It is Armstrong Number ");
+  } else {
+    console.log("It is not Armstrong Number ");
+  }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palendrome Number</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     let num = Number(prompt("Enter number to check palendrome"));
+  let temp = num;
+  //   num = num.toString().split("");
+  //   let bag = "";
+  //   for (let i = num.length - 1; i >= 0; i--) {
+  //     bag += num[i];
+  //   }
+  //   bag= +bag
+  //   console.log(typeof bag);
+  let result = num.toString().split("").reverse().join("");
+  result = +result;
+
+  if (num === result) {
+    alert(num + " is palendrome number");
+  } else {
+    alert(num + "is not palendrome number");
+  }
+
+  console.log(num);
+</script>
