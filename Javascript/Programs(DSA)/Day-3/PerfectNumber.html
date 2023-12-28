@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect NUmber</title>
+  </head>
+  <body>
+    <h1>Perfect NUmber</h1>
+    <h2 id="result">Result :</h2>
+  </body>
+</html>
+<script>
+  let result = document.getElementById("result");
+  let num = Number(prompt("Enter the nuber to check the perfect number"));
+
+  let i = 0;
+  let arr = [];
+  while (i < num) {
+    if (num % i === 0) {
+      arr.push(i);
+    }
+    i++;
+  }
+  //   console.log(arr);
+
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  //   console.log(sum);
+
+  if (sum === num) {
+    console.log(num + " is Perfect Number");
+    result.innerText = num + " is Perfect Number";
+  } else {
+    console.log(num + " not a Perfect Number");
+    result.innerText = num + " is not a Perfect Number";
+  }
+</script>

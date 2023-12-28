@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Number</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Neon Number</h1>
+    <h2 id="result">Result :</h2>
+  </body>
+</html>
+<script>
+  let result = document.getElementById("result");
+  let num = Number(prompt("Enter number to check Neon number or not"));
+
+  let temp = num;
+  num = num * num;
+
+  let sum = 0;
+
+  while (num > 0) {
+    let res = num % 10;
+    sum = sum + res;
+    num = Math.trunc(num / 10);
+  }
+
+  if (sum === temp) {
+    console.log("Neon Number");
+    result.innerText = temp + " is Neon Number";
+  } else {
+    console.log(" Not a Neon Number");
+    result.innerText = temp + " is not a Neon Number";
+  }
+
+  //   let temp = num;
+  //   let d = 1;
+  //   let square = num * num;
+
+  //   while (num > 0) {
+  //     d = d * 10;
+  //     num = Math.trunc(num / 10);
+  //   }
+
+  //   if (square % d === temp) {
+  //     console.log("Automorphic Number");
+  //     result.innerText = "Automorphic Number";
+  //   } else {
+  //     console.log(" Not a Automorphic Number");
+  //     result.innerText = " Not a Automorphic Number";
+  //   }
+</script>
