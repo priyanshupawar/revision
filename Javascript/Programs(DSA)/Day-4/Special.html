@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Special number</h1>
+    <ul>
+      <li>59</li>
+      <li>5+9</li>
+      <li>5*9</li>
+      <li>
+        After adding that resulte we will get same as user give than that is
+        special number
+      </li>
+    </ul>
+    <h1>Fabonacii series</h1>
+    <h1>Greates and smallest in a number</h1>
+    <h1>xylem {sum of 1st and last and more }</h1>
+
+    <h3 id="result"></h3>
+    <div id="output"></div>
+  </body>
+</html>
+<script>
+  let result = document.getElementById("result");
+  // let num = Number(prompt("Enter number to check Neon number or not"));
+  let num = 59;
+  let temp = num;
+
+  let arr = [];
+  let sum = 0;
+  let product = 1;
+
+  while (num > 0) {
+    let res = num % 10;
+    console.log(res);
+    sum = sum + res;
+    product = product * res;
+    arr.push(res);
+    num = Math.trunc(num / 10);
+  }
+  //   console.log(arr);
+  console.log(sum, product);
+  let out = sum + product;
+
+  if (out === temp) {
+    console.log("Special Number");
+    result.innerText = temp + " is Special Number";
+  } else {
+    console.log(" Not a Special Number");
+    result.innerText = temp + " is not a Special Number";
+  }
+//   let bag = "";
+//   for (let j = 1; j <= 5; j++) {
+   
+//     for (let i = 1; i <= 5; i++) {
+//       bag += " " + "*";
+//     }
+//     let output = document.getElementById("output");
+//     output.innerText = bag;
+//   }
+</script>

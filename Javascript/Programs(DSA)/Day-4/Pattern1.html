@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   for (let i = 1; i <= 5; i++) {
+  //     let bag = "";
+  //     for (let j = 0; j < 5; j++) {
+  //       if (i % 2 !== 0) {
+  //         bag += "*" + " ";
+  //       } else {
+  //         bag += " ";
+  //       }
+  //     }
+  //     console.log(bag);
+  //   }
+
+  //   console.log("\n");
+
+  //   for (let i = 1; i <= 5; i++) {
+  //     let bag = "";
+  //     for (let j = 0; j < 5; j++) {
+  //       bag += i + " ";
+  //     }
+  //     console.log(bag);
+  //   }
+
+  //   console.log("\n");
+  //   let bag = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = 0; j < 5; j++) {
+  //       bag += j + " ";
+  //     }
+  //     bag += "\n";
+  //   }
+  //   console.log(bag);
+
+  //   let bag = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = 0; j < 5; j++) {
+  //       if (i == 1) {
+  //         bag += "*" + " ";
+  //       } else {
+  //         bag += " ";
+  //       }
+  //     }
+  //     bag += "\n";
+  //   }
+  //   console.log(bag);
+
+  //   All condition are there to catch the i and j and manuplate that
+  //   let bag = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = 1; j <= 5; j++) {
+  //       if (
+  //         i == j ||
+  //         j == 5 ||
+  //         j == 1 ||
+  //         j == 3 ||
+  //         i == 3 ||
+  //         i == 1 ||
+  //         i + j == 6 ||
+  //         i == 5
+  //       ) {
+  //         bag += `*` + " ";
+  //       } else {
+  //         bag += j + " ";
+  //       }
+  //     }
+  //     bag += "\n";
+  //   }
+  //   console.log(bag);
+
+  //   let result = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = 1; j <= i; j++) {
+  //       result += "*" + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let result = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = 1; j <= i; j++) {
+  //       result += j + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let result = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = i; j >= 1; j--) {
+  //       result += j + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let result = "";
+  //   for (let i = 5; i >= 1; i--) {
+  //     for (let j = i; j <= 5; j++) {
+  //       result += j + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let result = "";
+  //   for (let i = 5; i >= 1; i--) {
+  //     for (let j = 1; j <= i; j++) {
+  //       result += j + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let bag = "";
+  //   for (let i = 5; i >= 1; i--) {
+  //     for (let j = 5; j >= i; j--) {
+  //       bag += j + " ";
+  //     }
+  //     bag += "\n";
+  //   }
+  //   console.log(bag);
+
+  //   let jhola = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = i; j <= 5; j++) {
+  //       jhola += j + " ";
+  //     }
+  //     jhola += "\n";
+  //   }
+  //   console.log(jhola);
+  //   let result = "";
+  //   for (let i = 1; i <= 5; i++) {
+  //     for (let j = i; j <= 5; j++) {
+  //       result += j + " ";
+  //     }
+  //     result += "\n";
+  //   }
+  //   console.log(result);
+
+  //   let res = "";
+  //   let n = 5;
+  //   for (let i = 0; i < n; i++) {
+  //     for (let j = 1; j <= i; j++) {
+  //       res += "  ";
+  //     }
+  //     for (let k = 1; k <= n - i; k++) {
+  //       res += k + " ";
+  //     }
+  //     res += "\n";
+  //   }
+  //   console.log(res);
+
+  //   let res = "";
+  //   let n = 5;
+  //   for (let i = 1; i <= n; i++) {
+  //     for (let j = 1; j <= i; j++) {
+  //       res += "  ";
+  //     }
+  //     for (let k = i; k <= n; k++) {
+  //       res += k + " ";
+  //     }
+  //     res += "\n";
+  //   }
+  //   console.log(res);
+
+  let res = "";
+  let n = 5;
+  for (let i = n; i >= 1; i--) {
+    // for (let j = 0; i < n; j++) {
+    //   res += "  ";
+    // }
+    for (let j = i; j >= 1; j--) {
+      res += j + " ";
+    }
+    res += "\n";
+  }
+  console.log(res);
+</script>
