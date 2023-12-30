@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   let start = 1;
+  //   let end = 50;
+  let count = 0;
+  for (let i = 1; i <= 50; i++) {
+    let num = i;
+
+    let temp = num;
+    let l = 0;
+
+    while (num > 0) {
+      l++;
+      num = Math.trunc(num / 10);
+    }
+    num = temp;
+    let sum = 0;
+    while (num > 0) {
+      let rem = num % 10;
+      let fact = 1;
+      for (let i = 0; i < l; i++) {
+        fact = fact * rem;
+      }
+      sum = sum + fact;
+      num = Math.trunc(num / 10);
+    }
+
+    if (sum == temp) {
+      count++;
+
+      if (count % 2 == 0) {
+        console.log(temp + " is Arm");
+      }
+    }
+  }
+</script>

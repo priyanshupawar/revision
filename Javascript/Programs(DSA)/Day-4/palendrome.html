@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+//   let num = Number(prompt("Enter num"));
+//   let newNumber = num + 1;
+//   for (let i = newNumber; ; i++) {
+//     let temp = newNumber;
+//     let result = 0;
+//     while (newNumber > 0) {
+//       let rem = newNumber % 10;
+//       result = result + rem;
+//       result = result * 10;
+//       newNumber = Math.trunc(newNumber / 10);
+//     }
+    
+//     result = result / 10;
+//     if (result === temp) {
+//       console.log(temp + "is next P");
+//       break;
+//     }
+//   }
+let num = Number(prompt("Enter num"));
+let newNumber = num + 1;
+
+while (true) {
+  let temp = newNumber;
+  let reversedNumber = 0;
+  let originalNumber = newNumber;
+
+  // Calculate the reversed number
+  while (newNumber > 0) {
+    let rem = newNumber % 10;
+    reversedNumber = reversedNumber * 10 + rem;
+    newNumber = Math.trunc(newNumber / 10);
+  }
+
+  // Check if the number is a palindrome
+  if (reversedNumber === temp) {
+    console.log(temp + " is the next palindrome");
+    break;
+  }
+
+  // Increment temp for the next iteration
+  temp++;
+  newNumber = temp; // Reset newNumber for the next iteration
+}
+
+
+</script>
