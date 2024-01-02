@@ -1,5 +1,5 @@
-// const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
-const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7gr";
+const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+// const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7g";
 
 const HomeData = async () => {
   try {
@@ -8,6 +8,7 @@ const HomeData = async () => {
     );
     let data = await res.json();
     const actualData = data.items;
+    // console.log(actualData);
     const ContainerDiv = document.getElementById("ParentContainer");
     ContainerDiv.innerHTML = null;
     appendVideos(actualData);

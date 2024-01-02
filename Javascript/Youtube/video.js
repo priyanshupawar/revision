@@ -1,24 +1,24 @@
 //search function for navbar
-// const Api_Key = `AIzaSyAJKf97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+const Api_Key = `AIzaSyAJKf97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+// const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7g";
+const searchVideos = async (e) => {
+  e.preventDefault();
+  try {
+    let query = document.getElementById("query").value;
 
-// const searchVideos = async (e) => {
-//   e.preventDefault();
-//   try {
-//     let query = document.getElementById("query").value;
-
-//     // console.log(query);
-//     let res = await fetch(
-//       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${Api_Key}`
-//     );
-//     query = "";
-//     let data = await res.json();
-//     const actualData = data.items;
-//     console.log("data", actualData);
-//     appendVideos(actualData);
-//   } catch (err) {
-//     console.log("error", err);
-//   }
-// };
+    // console.log(query);
+    let res = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${Api_Key}`
+    );
+    query = "";
+    let data = await res.json();
+    const actualData = data.items;
+    console.log("data", actualData);
+    appendVideos(actualData);
+  } catch (err) {
+    console.log("error", err);
+  }
+};
 
 //Append the search thing on page
 
@@ -59,16 +59,16 @@ const appendVideos = (data) => {
 };
 
 async function recommendedVideo() {
-  const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7gr";
+  const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7g";
   // e.preventDefault();
   try {
     let res = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=trending&key=${Api_Key}`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=trending&key=${Api_Key}`
     );
     query = "";
     let data = await res.json();
     const actualData = data.items;
-    console.log("data", actualData);
+    // console.log("data", actualData);
     appendVideos(actualData);
   } catch (err) {
     console.log("error", err);
@@ -78,7 +78,7 @@ async function recommendedVideo() {
 function playVideo() {
   // e.preventDefault();
   let data = JSON.parse(localStorage.getItem("clicked_items"));
-  // console.log(data.videoId);
+  console.log(data);
   let id = data.videoId;
   let container = document.getElementById("videoDetails");
   let iframe = document.createElement("iframe");
@@ -86,6 +86,24 @@ function playVideo() {
   iframe.width = "960";
   iframe.height = "555";
   iframe.setAttribute("allowfullscreen", true);
+  // title = document.createElement("h3");
+  // title.innerText = data.snippet.description;
   container.append(iframe);
+
   recommendedVideo();
 }
+
+const trendingData = async () => {
+  try {
+    let res = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=trending&key=${Api_Key}`
+    );
+    let data = await res.json();
+    const actualData = data.items;
+    const ContainerDiv = document.getElementById("ParentContainer");
+    ContainerDiv.innerHTML = null;
+    appendVideos(actualData);
+  } catch (err) {
+    console.log("error", err);
+  }
+};
