@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //  write a program to check the string is palandrome or not
+
+  // let s = "racecar";
+  let s = prompt("Enter string to check palindrom");
+  // let res = "";
+  // for (let i = s.length-1; i >= 0; i--) {
+  //   res += s[i];
+  // }
+  // // console.log(res)
+  // if (res === s) {
+  //   console.log(s + " is a palandrome");
+  // } else {
+  //   console.log(s + " is not a palandrome");
+  // }
+
+  function isPalindrom(s) {
+    let i = 0;
+    let j = s.length - 1;
+    while (i < j) {
+      if (s[i] !== s[j]) {
+        return false;
+      } else {
+        i++;
+        j--;
+      }
+    }
+    return true;
+  }
+
+  if (isPalindrom(s)) {
+    console.log(s + ": is Palindrom");
+  } else {
+    console.log(s + ":  is not Palindrom");
+  }
+</script>
