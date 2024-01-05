@@ -91,10 +91,21 @@ const FS = require("fs");
 // FS.copyFileSync("./msg.txt", "./print1.txt");
 
 // Async---------------------------------------------
-FS.copyFile("./msg.txt", "./demo3.txt", (error) => {
+// FS.copyFile("./msg.txt", "./demo3.txt", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("File copied");
+//   }
+// });
+
+// folder
+
+// Create Folder--------------------------------------------
+FS.mkdir("./Virat", (error) => {
   if (error) {
     console.log(error);
   } else {
-    console.log("File copied");
+    console.log("Folder created");
   }
 });
