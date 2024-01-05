@@ -63,10 +63,38 @@ const FS = require("fs");
 // FS.renameSync("./demo.html", "./index.html");
 
 // Async---------------------------------------------
-FS.rename("./ex.txt", "./msg.txt", (error) => {
+// FS.rename("./ex.txt", "./msg.txt", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("File name changed");
+//   }
+// });
+
+//Copy fille -----------------------------------------------------
+
+// 1}hallow copy--------------------------------------------
+// Sync--------------------------------------------
+// FS.linkSync("./msg.txt","./print.txt")
+
+// Async---------------------------------------------
+// FS.link("./msg.txt", "./demo2.txt", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Linking Succesfull");
+//   }
+// });
+
+// 2}Deep copy--------------------------------------------
+// Sync--------------------------------------------
+// FS.copyFileSync("./msg.txt", "./print1.txt");
+
+// Async---------------------------------------------
+FS.copyFile("./msg.txt", "./demo3.txt", (error) => {
   if (error) {
     console.log(error);
   } else {
-    console.log("File name changed");
+    console.log("File copied");
   }
 });
