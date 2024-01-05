@@ -102,10 +102,26 @@ const FS = require("fs");
 // folder
 
 // Create Folder--------------------------------------------
-FS.mkdir("./Virat", (error) => {
+// FS.mkdir("./Virat", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Folder created");
+//   }
+// });
+// FS.mkdir("./Rohit", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Folder created");
+//   }
+// });
+
+// delete Folder--------------------------------------------
+FS.rmdir("./Rohit", (error) => {
   if (error) {
     console.log(error);
   } else {
-    console.log("Folder created");
+    console.log("Delete Folder ");
   }
 });
