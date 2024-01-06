@@ -118,10 +118,10 @@ const FS = require("fs");
 // });
 
 // delete Folder--------------------------------------------
-FS.rmdir("./Rohit", (error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Delete Folder ");
-  }
-});
+// FS.rmdir("./Rohit", (error) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Delete Folder ");
+//   }
+// });
