@@ -1,0 +1,18 @@
+.navContainer {
+  background-color: black;
+  max-height: 175px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-evenly;
+  position: sticky;
+}
+.navContainer a {
+  text-decoration: none;
+  border-bottom: 2px solid black;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+}
+.navContainer a:hover {
+  border-bottom: 2px solid red;
+}
