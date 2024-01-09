@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-evenly;
   position: sticky;
+  /* width: 100%;
+  z-index: 5; */
 }
 .navContainer a {
   text-decoration: none;
