@@ -18,7 +18,7 @@
       </nav>
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="#" method="post">
+        <form action="#" method="post" id="form">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
 
@@ -30,6 +30,9 @@
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required>
@@ -57,3 +60,28 @@
     </div>
 </body>
 </html>
+
+<script>
+    let form = document.getElementById("form");
+    let userDetails = {}
+    form.addEventListener("input",(event)=>{
+        let value = event.target.value;
+        let name = event.target.name;
+        userDetails [name] = value;
+        console.log(userDetails)
+    })
+
+    form.addEventListener("submit",(event)=>{
+     event.preventDefault();
+     const {firstName,lastName,mobileNumber,email,password,dob,gender} = userDetails
+     if(firstName && lastName && mobileNumber && email && password && dob && gender){
+fetch("/newuser",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify(userDetails)
+}).then(data=>data.json()).then(data=>console.log(data)).catch(err=>console.log(err))
+     }else{
+        alert("Fill out all the fields before subbmitting")
+     }
+    })
+</script>

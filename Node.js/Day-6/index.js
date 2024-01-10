@@ -70,6 +70,22 @@ const server = http.createServer((req, res) => {
       res.end();
     }
   }
+  if (method == "POST") {
+    if (url == "/newuser") {
+      req.on("data", (data) => {
+        console.log(data.toString());
+        let newUser = JSON.parse(data.toString());
+        let users = fs.readFileSync("./users.json", "utf-8")
+          ? JSON.parse(fs.readFileSync("./users.json", "utf-8"))
+          : [];
+        users.push(newUser);
+        console.log(newUser);
+        fs.writeFileSync("./users.json", JSON.stringify(users))
+        res.write(JSON.stringify({msg:"Data Stored in Database"}))
+        res.end()
+      });
+    }
+  }
   //   else {
   //     res.write("<h1>Error 404 Page Not Found </h1>");
   //     res.end();
