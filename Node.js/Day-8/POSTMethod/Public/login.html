@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/loginStyle" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="" id="form">
+      <div>
+        <label for="username">USERNAME : </label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label for="password">PASSWORD : </label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <button>LOGIN</button>
+    </form>
+  </body>
+</html>
+<script>
+  let form = document.getElementById("form");
+  let userDetails = {};
+  form.addEventListener("input", (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+    userDetails[name] = value;
+    console.log(userDetails);
+  });
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let { username, password } = userDetails;
+    if ((username, password)) {
+      fetch("/newuser", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userDetails),
+      })
+        .then((data) => data.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    } else {
+      alert("Fill out all the fields before subbmitting");
+    }
+  });
+</script>
