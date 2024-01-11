@@ -42,7 +42,7 @@ const server = http.createServer((req, res) => {
           ? JSON.parse(fs.readFileSync("./users.json", "utf-8"))
           : [];
         users.push(newUser);
-        console.log(newUser);
+        // console.log(newUser);
         fs.writeFileSync("./users.json", JSON.stringify(users));
         res.write(JSON.stringify({ msg: "Data Stored in Database" }));
         res.end();
