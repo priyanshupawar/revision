@@ -19,9 +19,7 @@ function Products() {
               <p>{ele.title}</p>
               <p>Price:₹ {Math.trunc(ele.price * 40)}</p>
               <p>{ele.category}</p>
-              <button onClick={() => addToCart(ele)
-              
-              }>Add To Cart</button>
+              <button onClick={() => addToCart(ele)}>Add To Cart</button>
             </div>
           );
         })}
