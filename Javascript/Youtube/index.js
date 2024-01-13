@@ -1,5 +1,5 @@
-const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
-// const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7g";
+// const Api_Key = `AIzaSyAO9S97kRNKMrSyh4r9hfSYRe-3YGcI2V0`;
+const Api_Key = "AIzaSyAJKfjVRli1M0BKvp5sqkmfn0x8vwL7w7g";
 
 const HomeData = async () => {
   try {
@@ -75,7 +75,7 @@ const appendVideos = (data) => {
     container.addEventListener("click", () => {
       storeClickedVideo(data);
       console.log(title);
-      window.location.href = "/video.html";
+      window.location.href = "./video.html";
     });
 
     function storeClickedVideo(data) {
