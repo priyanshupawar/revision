@@ -1,0 +1,17 @@
+/* About.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .heading {
+    color: #333;
+  }
+  
+  .description {
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  
