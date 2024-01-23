@@ -45,10 +45,11 @@ export default function Navbar() {
             <RouterLink to={"/register"}>
               <Button>Register</Button>
             </RouterLink>
-
-            <Box>
-              <FaCartArrowDown size={"20"} cursor={"pointer"} />
-            </Box>
+            <RouterLink to={"/cart/:id"}>
+              <Box>
+                <FaCartArrowDown size={"20"} cursor={"pointer"} />
+              </Box>
+            </RouterLink>
             <Stack direction={"row"} spacing={7}>
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}

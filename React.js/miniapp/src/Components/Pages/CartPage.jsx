@@ -14,7 +14,7 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Modal from "./Modal";
+import { Submitted } from "./Submitted";
 
 export default function CartPage() {
   const [cart, setCart] = useState([]);
@@ -22,13 +22,16 @@ export default function CartPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-      //   console.log(res.data);
-      setCart(res.data);
-    });
+    axios
+      .get(`https://fakestoreapi.com/products/${id}`)
+      .then((res) => {
+        //   console.log(res.data);
+        setCart(res.data);
+      })
+      .catch((error) => console.log(error));
   }, [id]);
 
-  const { title, price, image, description, category } = cart;
+  const { title, price, image, category } = cart;
   return (
     <>
       <Heading>Cart Page</Heading>
@@ -116,7 +119,7 @@ export default function CartPage() {
       <Center>
         <Box>
           <Heading>Total Price : ₹{Math.floor(count * price * 100)} </Heading>
-          <Modal />
+          <Submitted />
         </Box>
       </Center>
     </>

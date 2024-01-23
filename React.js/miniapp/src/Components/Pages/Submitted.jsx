@@ -1,5 +1,6 @@
 import {
   Button,
+  Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
@@ -9,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-export default function Modal() {
+function Submitted() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -33,3 +34,5 @@ export default function Modal() {
     </>
   );
 }
+
+export { Submitted };

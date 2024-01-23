@@ -6,11 +6,13 @@ import Products from "./Pages/Products";
 import Register from "./Pages/Register";
 import SingleProductPage from "./Pages/SingleProductPage";
 import CartPage from "./Pages/CartPage";
+import DefaultPage from "./Pages/DefaultPage";
 
 function AllRoutes() {
   return (
     <div>
       <Routes>
+        <Route path="*" element={<DefaultPage />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
