@@ -18,7 +18,7 @@ function Products() {
       <Heading textAlign={"center"} m={"5px"}>
         Products Page
       </Heading>
-      <Grid templateColumns="repeat(3, 1fr)" gap={8}>
+      <Grid templateColumns="repeat(4, 1fr)" gap={8}>
         {data?.length > 0 &&
           data.map((ele) => {
             return (
